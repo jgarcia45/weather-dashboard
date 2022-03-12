@@ -28,7 +28,6 @@ THEN I am again presented with current and future conditions for that city
 
 ## Screenshot
 Here is a preview of the website and does not include any text: ![]()
-Here is a preview of the website with text includ: ![]()
 
 ## Link
 
