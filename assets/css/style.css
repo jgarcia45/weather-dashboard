@@ -1,0 +1,7 @@
+header {
+    display: flexbox;
+    background-color: skyblue;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
