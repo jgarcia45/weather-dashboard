@@ -1,4 +1,4 @@
-# Web APIs Challenge: Code Quiz
+# Server-Side APIs Challenge: Weather Dashboard
 [![MSU](https://img.shields.io/badge/MSU-Coding%20Bootcamp-green/)](https://bootcamp.msu.edu/)
 
 ## Description
@@ -40,3 +40,4 @@ A link to the deployed [URL](https://jgarcia45.github.io/weather-dashboard/):
 ```
 https://jgarcia45.github.io/weather-dashboard/
 ```
+
