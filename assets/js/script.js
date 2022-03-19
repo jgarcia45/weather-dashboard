@@ -151,7 +151,7 @@ $("#searchButton").on("click", function (event) {
     currentWeather(city);
 });
 
-// History Search List
+// History Search List Button Listener
 $("#historyList").on("click", function () {
     var city = JSON.parse(localStorage.getItem("City"));
     var listButton = $("#historyList").siblings();
