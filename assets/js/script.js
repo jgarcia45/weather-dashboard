@@ -3,9 +3,12 @@ var apiKey = "d34c5a7f5b829f5df306f1143caac581";
 
 // Variable Definitions
 var cityList = [];
+var count = 0;
 
 // Displays the Weather as of Now
 var currentWeather = function (city) {
+    $('#currentWeather').empty();
+
     var cityAPI = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + apiKey;
 
     // Checks City API
@@ -77,6 +80,8 @@ var currentWeather = function (city) {
 };
 
 var futureWeather = function (city) {
+    $('#futureWeather').empty();
+
     var cityAPI = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + apiKey;
 
     // Checks City API
@@ -94,28 +99,31 @@ var futureWeather = function (city) {
                         response.json().then(function (data) {
                             // Displays 5 Day Forecast
                             for (var i = 1; i < 6; i++) {
+                                var col = $('<div class="col-2"></div>')
+                                $('#futureWeather').append(col);
+
                                 // Displays Date
                                 var date = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
-                                var displayDate = $('<p></p>').text(date);
-                                $('#futureWeather').append(displayDate);
+                                var displayDate = $('<h4></h4>').text(date);
+                                col.append(displayDate);
 
                                 // Displays Icon
                                 var icon = data.daily[i].weather[0].icon;
                                 var image = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
                                 var weatherIcon = $('<img></img>').attr("src", image);
-                                $('#futureWeather').append(weatherIcon);
+                                col.append(weatherIcon);
 
                                 // Displays Temperature
                                 var temperature = $('<p></p>').text("Temp: " + data.daily[i].temp.day + "°F");
-                                $('#futureWeather').append(temperature);
+                                col.append(temperature);
 
                                 // Displays Wind
                                 var wind = $('<p></p>').text("Wind: " + data.daily[i].wind_speed + "MPH");
-                                $('#futureWeather').append(wind);
+                                col.append(wind);
 
                                 // Displays Humidity
                                 var displayHumidity = $('<p></p>').text("Humidity: " + data.daily[i].humidity + "%");
-                                $('#futureWeather').append(displayHumidity);
+                                col.append(displayHumidity);
                             }
                         });
                     }
@@ -136,8 +144,21 @@ $("#searchButton").on("click", function (event) {
     var city = $("#cityName").val();
     if (!cityList.includes(city)) {
         cityList.push(city);
+        var cities = $('<button class="btn btn-primary"></button>').text(city);
+        $('#historyList').append(cities);
     }
     localStorage.setItem("City", JSON.stringify(cityList));
     currentWeather(city);
+});
 
+// History Search List
+$("#historyList").on("click", function () {
+    var city = JSON.parse(localStorage.getItem("City"));
+    var listButton = $("#historyList").siblings();
+    console.log(listButton);
+    for (var i = 0; i < city.length; i++) {
+        if (city[i] === listButton) {
+            currentWeather(city[i]);
+        }
+    }
 });
