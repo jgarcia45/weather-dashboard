@@ -12,7 +12,7 @@
     <title>Weather Dashboard</title>
 </head>
 
-<body class="flex-column min-100-vh">
+<body class="container-fluid">
     <header>
         <h1 class="fw-bolder">Weather Dashboard</h1>
     </header>
@@ -24,14 +24,17 @@
             <input class="form-input" placeholder="Bakersfield" type="text" id="cityName" />
             <button class="btn btn-primary" id="searchButton">Search</button>
             <hr>
+            <div id="historyList"></div>
         </div>
 
         <!-- Displays Weather -->
         <div class="col-10">
             <!-- Current Weather -->
-            <div id="currentWeather"></div>
+            <div class="row" id="currentWeather"></div>
             <!-- Future Forecast -->
-            <div id="futureWeather"></div>
+            <div class="" id="futureWeather">
+                <h3>5-Day Forecast: </h3>
+            </div>
         </div>
     </div>
 
