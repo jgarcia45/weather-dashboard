@@ -27,7 +27,9 @@ THEN I am again presented with current and future conditions for that city
 ```
 
 ## Screenshot
-Here is a preview of the website and does not include any text: ![]()
+Here is a preview of the website before running the weather api: ![Before](./assets/images/before.png)
+Here is a preview of the website after running the weather api: ![Before](./assets/images/after.png)
+
 
 ## Link
 
