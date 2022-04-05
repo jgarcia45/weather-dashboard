@@ -1,7 +1,14 @@
 header {
     display: flexbox;
-    background-color: skyblue;
+    background-color: rgb(54, 95, 105);
     justify-content: center;
     text-align: center;
     color: white;
+}
+
+.card {
+    background-color: rgb(54, 95, 105);
+    color: white;
+    border: solid black;
+    margin: 10px;
 }
