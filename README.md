@@ -1,6 +1,15 @@
 # Server-Side APIs Challenge: Weather Dashboard
 [![MSU](https://img.shields.io/badge/MSU-Coding%20Bootcamp-green/)](https://bootcamp.msu.edu/)
 
+## Technologies
+![Technologies](https://img.shields.io/badge/-HTML-E34F26?logo=html5&logoColor=white)
+![Technologies](https://img.shields.io/badge/-CSS-1572B6?logo=css3&logoColor=white)
+![Technologies](https://img.shields.io/badge/-Bootstrap-7952B3?logo=Bootstrap&logoColor=white)
+![Technologies](https://img.shields.io/badge/-JavaScript-007396?logo=JavaScript&logoColor=white)
+![Technologies](https://img.shields.io/badge/-jQuery-0769AD?logo=jQuery&logoColor=white)
+![Technologies](https://img.shields.io/badge/-Git-F05032?logo=Git&logoColor=white)
+
+
 ## Description
 Our task is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS. We will use the [OpenWeather One Call API](https://openweathermap.org/api/one-call-api) to retrieve weather data for the cities. We will also use `localStorage` to store any persistent data.
 
