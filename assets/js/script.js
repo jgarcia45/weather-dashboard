@@ -57,7 +57,7 @@ var currentWeather = function (city) {
                             if (data.current.uvi >= 0 && data.current.uvi <= 2) {
                                 $("#uvIndex").css("background-color", "green").css("color", "white");
                             } else if (data.current.uvi >= 3 && data.current.uvi <= 5) {
-                                $("#uvIndex").css("background-color", "yellow").css("color", "white");
+                                $("#uvIndex").css("background-color", "yellow").css("color", "black");
                             } else if (data.current.uvi >= 6 && data.current.uvi <= 7) {
                                 $("#uvIndex").css("background-color", "orange").css("color", "white");
                             } else if (data.current.uvi >= 8 && data.current.uvi <= 10) {
@@ -99,7 +99,7 @@ var futureWeather = function (city) {
                         response.json().then(function (data) {
                             // Displays 5 Day Forecast
                             for (var i = 1; i < 6; i++) {
-                                var col = $('<div class="col-2"></div>')
+                                var col = $('<div class="col-2 card"></div>')
                                 $('#futureWeather').append(col);
 
                                 // Displays Date
@@ -144,7 +144,7 @@ $("#searchButton").on("click", function (event) {
     var city = $("#cityName").val();
     if (!cityList.includes(city)) {
         cityList.push(city);
-        var cities = $('<button class="btn btn-primary"></button>').text(city);
+        var cities = $('<li class="list-group-item list-group-item-info"></li>').text(city);
         $('#historyList').append(cities);
     }
     localStorage.setItem("City", JSON.stringify(cityList));
@@ -152,12 +152,11 @@ $("#searchButton").on("click", function (event) {
 });
 
 // History Search List Button Listener
-$("#historyList").on("click", function () {
+$("#historyList").on("click", ".list-group-item", function () {
     var city = JSON.parse(localStorage.getItem("City"));
-    var listButton = $("#historyList").siblings();
-    console.log(listButton);
+    var searchHistory = $(this).text();
     for (var i = 0; i < city.length; i++) {
-        if (city[i] === listButton) {
+        if (city[i] === searchHistory) {
             currentWeather(city[i]);
         }
     }
