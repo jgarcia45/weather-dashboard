@@ -9,7 +9,7 @@ var count = 0;
 var currentWeather = function (city) {
     $('#currentWeather').empty();
 
-    var cityAPI = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + apiKey;
+    var cityAPI = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + apiKey;
 
     // Checks City API
     fetch(cityAPI).then(function (response) {
@@ -34,7 +34,7 @@ var currentWeather = function (city) {
 
                             // Displays Icon
                             var icon = data.current.weather[0].icon;
-                            var image = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+                            var image = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
                             var weatherIcon = $('<img></img>').attr("src", image);
                             $(name).append(weatherIcon);
 
@@ -82,7 +82,7 @@ var currentWeather = function (city) {
 var futureWeather = function (city) {
     $('#futureWeather').empty();
 
-    var cityAPI = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + apiKey;
+    var cityAPI = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=" + apiKey;
 
     // Checks City API
     fetch(cityAPI).then(function (response) {
@@ -109,7 +109,7 @@ var futureWeather = function (city) {
 
                                 // Displays Icon
                                 var icon = data.daily[i].weather[0].icon;
-                                var image = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+                                var image = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
                                 var weatherIcon = $('<img></img>').attr("src", image);
                                 col.append(weatherIcon);
 
